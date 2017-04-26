@@ -1,0 +1,19 @@
+#!/usr/bin/env python3
+#
+# A Solution For Chapter 4 Exercise 2
+#
+words =  set()
+
+while True:
+    data = input("enter a line (q to quit): ")
+    if data == 'q':
+        break
+    words.update(data.split())
+
+thelist = list(words)
+thelist.sort()
+
+for i in thelist:
+    print(i)
+
+print(len(thelist), "words in all")

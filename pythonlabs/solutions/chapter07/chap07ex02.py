@@ -1,0 +1,48 @@
+#!/usr/bin/env python3
+#
+# A Solution For Chapter 7 Exercise 2
+#
+class Person:
+    def __init__(self, fn = "Unknown", age = 21, gender="Unkown"):
+        self.name = fn
+        self.age = age
+        self.gender = gender
+
+    def __str__(self):
+        s = self.name + " " + str(self.age) + " " + self.gender
+        return s
+
+class Family:
+    def __init__(self, m, d, *args):
+        self.mom = m
+        self.dad = d
+        self.kids = []
+        for i in args:
+            self.kids.append(i)
+
+    def add(self, kid):
+        self.kids.append(kid)
+
+    def __str__(self):
+        s = str(self.mom) + " " + str(self.dad) 
+        for i in self.kids:
+            s += "\n\t" + str(i)
+        return s
+
+mom = Person("Sally", 76, "F") 
+dad = Person("Arthur", 62, "M")
+print(mom)
+print(dad)
+
+joe = Person("Joel", 41, "M")
+judy = Person("Judy", 38, "F");
+fam = Family(mom, dad, joe, judy) 
+print("*** Family Members are")
+print(fam)
+print("*** End Family Members")
+print()
+mike = Person("Michael", 33, "M")
+fam.add(mike)
+print("*** Family Members are")
+print(fam)
+print("*** End Family Members")
