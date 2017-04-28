@@ -1,7 +1,0 @@
-#! /usr/bin/env python3
-
-inputStr = input("Enter a string of characters: ");
-num = input("enter a number: "); 
-
-print(inputStr * num);
-
