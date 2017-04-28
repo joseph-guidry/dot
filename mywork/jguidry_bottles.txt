@@ -1,0 +1,65 @@
+Name: Guidry, Joseph
+Date: 28 April 2017
+Current Module: Python Programming
+Project Name:   99 Bottles 
+
+Project Goals:
+	<A two to three sentence description of the project and its intent>
+    The goal of this project was to print to the display the song "99 Bottles" with a default value of 99, unless a command line argument is given. The program loops through printing the verses of the song, while decrementing the number of bottles by one each iteration. At the end of the program, the verbage is changed to display proper wording of statements. 
+
+Considerations:
+	<A bulleted list of considerations and conditions which affected the design of your project>
+    - Get number of bottles from command line.
+        -Determine if the command line argument is integer.
+        -If no arguments provided, default is requirement of 99.
+    - Call song function and print verses of song "99 Bottles"
+
+Initial Design:
+	<A paragraph or more that adequately describes your program's structure and layout discussing the various modules (.c and corresponding .h files) that you implemented>
+
+    The program starts the main() and will grab the number of bottles passed from the command line, or default to 99, through the use of the sys module. If invalid entry also defaults to 99.  This value is passed to the song() and executes.  Once the number of bottles has got to 1 and 0, the wording of the verses are modified to reflect the proper english wording.
+
+Data Flow:
+	<A paragraph or longer describing the data flow of the program in a sequential manner.  Include a diagram when necessary.>
+    The input data from the command line is into the get_bottles() where it is determine to be a valid input.  The function takes into consideration non-integers and negative values, these values default to 99, or the positive value of the input. The return value of the get_bottles() is stored in the variable, "bottles". The song() takes a int value, bottles in this cases, and uses this value to decrement the number of bottles on the wall.  Two decisions are considered, if bottle is either 1, or 0. Once true the english used in the print statements are modified to reflect the proper wording. The return statement exits the song() and allows the program to end. 
+
+Communication Protocol:
+	<Discuss any custom communication protocol you have used including the various request and responses that may be sent and received.>
+    No custom communication protocols were used.
+
+Potential Pitfalls:
+	<Discuss any potential issues that you might run into while creating the project>
+    -The use of these modules outside of printing this only song. 
+    -Entering unconsidered input. 
+
+Test Plan:
+	User Test:
+ 		<Describe the steps taken for each user test.>
+        Test song():
+            - provide hard coded input for bottle variable.
+            - Test the printing of the main verse.
+            - Test the printing of the last verse with decrement bottle number
+            - Insert if statements to provide functionality of change in wording of the statements.
+            - Ensure return statement was placed in correct place for intended output.
+    
+        Test get_bottles():
+            - Ensure the argv list is passed to the function.
+            - Test the output defaults to 99 with no input
+            - Determine how decision on first argument wasn't a string and convert to an integer.
+            - Test if program will discard non-integer values, until one is either provided or can default to 99.
+
+	Test Cases:
+		<A brief overview of the test cases that you implemented.>
+        - First test = 5; Printed starting at 5.
+        - Second test =  10 5; Printed starting at 10.
+        - Third test =   ;Printed starting at default.
+        - Fourth test = a 5 ;Printed starting at 5.
+        - Fifth test = -5 ;Printed starting at 5.
+
+
+Conclusion:
+	<A review of the project, what worked, what didn’t and how to improve upon your project in the future.>
+
+This project takes a command line argument that is taken only if an integer value, or default to 99. Then will print the song "99 Bottles", taking into account the change in wording at the end of the song.  The positioning of the return statements and how to handle the decrement of the bottle number. Also in the get_bottles(), it took some time to determine a good solution to remove all arguments that did not convert to an integer value to give to the song(). To improve this program, there could be a dictionary object that could index different songs, and a selection could be made. The song function would be changed to "99_bottles()" and incorporate other songs. This would make the program more general and usable in other applications. 
+
+
