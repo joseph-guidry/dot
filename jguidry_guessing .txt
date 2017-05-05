@@ -1,0 +1,54 @@
+Name: Guidry, Joseph
+Date: 28 April 2017
+Current Module: Python Programming
+Project Name:   99 Bottles 
+
+Project Goals:
+	<A two to three sentence description of the project and its intent>
+    The goal of this project was to open a program that was a guessing game.  The game chose a random digit between 1 and 100, and responded with your guess being either higher or lower than the number.
+My intent was to provide an option to play again, and present output that would reset after the end of each round. Included, is a piece that will lie on a random turn returning the opposite response to the users guess.
+
+Considerations:
+	<A bulleted list of considerations and conditions which affected the design of your project>
+    - Get the random number between 1 and 100. Then lie number for which turn to lie on.
+    - Enter the guess_game() and get the users guess.
+        - If invalid response, handle the exception without incrementing the turn number.
+        - Check if guess is the random number, if yes user wins.
+            - If not, the output will display if guess is higher, or lower, than the random number.
+            - The game will also determine if the turn is to lie. 
+
+Initial Design:
+	<A paragraph or more that adequately describes your program's structure and layout discussing the various modules (.c and corresponding .h files) that you implemented>
+
+    -Guess_game() is the initiator of getting the random and lie number, and passing these numbers to the 
+     play_game().
+    -Play_game() is where the guess is obtained and used against conditional statments to determine 
+     the correct output, which is either guess was correct, to low, or to high.
+    -Higher() and Lower() output appropriate print statements of the status of the guess.
+    -Get_number() generates the random number for both the guessed value and turn number to lie on.
+    -Get_guess() is the verification of input is valid number for guess.
+
+Data Flow:
+	<A paragraph or longer describing the data flow of the program in a sequential manner.  Include a diagram when necessary.>
+
+    - The main() program opens and presents the banner for the play_game().  The numbers for the game and which turn to lie on are generated in the game_number(). The play_game() is called passing both random 
+numbers. In the game, the user is prompted for a guess. The guess is checked prior to being returned, and is check against conditional statements about the end result.  The result could be correct and the game exits, and asks if the user would like to play again. The result could be to 
+
+Communication Protocol:
+	<Discuss any custom communication protocol you have used including the various request and responses that may be sent and received.>
+
+Potential Pitfalls:
+	<Discuss any potential issues that you might run into while creating the project>
+
+Test Plan:
+	User Test:
+ 		<Describe the steps taken for each user test.>
+	Test Cases:
+		<A brief overview of the test cases that you implemented.>
+
+Conclusion:
+	<A review of the project, what worked, what didn’t and how to improve upon your project in the future.>
+
+
+
+
